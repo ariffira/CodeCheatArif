@@ -1,0 +1,39 @@
+install:
+npm install –g @angular/cli
+
+then create an angular app
+ng new app-name
+
+Test your app by
+ng serve
+
+creating components:
+ng g component component-directory/name
+
+to use Form import this in app.module.ts
+import { FormsModule} from '@angular/forms'; 
+then add it as:
+  imports: [
+    BrowserModule,
+    FormsModule //here
+  ],
+
+creating services:
+ng g service services-directory/name
+then import it in app.module.ts
+import { DataService} from './services/data.service';
+and then put it as provider as:
+  providers: [DataService],
+then u have to import DataService also inside the component u want to use and also
+use it inside constructor as:
+  constructor(private dataService: DataService) { }
+
+
+for REST API Test use: https://jsonplaceholder.typicode.com/
+
+
+
+
+
+
+
