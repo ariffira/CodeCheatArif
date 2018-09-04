@@ -1,0 +1,26 @@
+// run build to make your code for production
+npm run build
+
+// Add your github and site name/app anem before dependencies and scripts
+  "private": true,
+  "homepage": "http://ariffira.github.io/easy-react-redux",
+  "dependencies": {
+
+//add this inside scripts
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+
+// add this also 
+ "devDependencies": {
+    "gh-pages": "^1.2.0"
+  }
+
+or 
+
+npm install --save-dev gh-pages
+
+Finally:
+
+npm run deploy
+
+now check your site : http://ariffira.github.io/easy-react-redux
