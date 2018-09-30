@@ -124,7 +124,8 @@ git commit -m "first commit"
 git remote add origin git@github.com:ariffira/symphart.git
 git push -u origin master
 
-25)
+25) chanhe https to ssh git remote
+git remote set-url origin <copy-link-here>.
 
 
 
