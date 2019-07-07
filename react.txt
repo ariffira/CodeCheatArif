@@ -1,0 +1,88 @@
+1. create a folder for react
+cd client-front
+npm i -g create-react-app //install react globally
+create-react-app .  // if u are not inside client then: create-react-app clientName/. 
+
+1.1 basic react cmd and tips
+
+version check: create-react-app --version
+
+create-react-app yourappname
+
+npm start // start react app
+
+
+
+2. set proxy in package.json of react client-front as: "proxy": "http://localhost:5000"
+
+3. Installing bootstrap and reactstrap for react:
+npm i bootstrap reactstrap(which will help bootstrap use as react) 
+then import bootstrap in client-front/app.js as:
+import 'bootstrap/dist/css/bootstrap.min.css';
+or:
+npm i --save reactstrap 
+npm i --save bootstrap
+then use some bootstrap components from reactstrap site and test it
+
+4. Redux: for storing states and data to front and and communicate to backend
+npm i redux react-redux redux-thunk 
+//react-redux to communicate react with redux and redux-thunk is a middleware for dispatch to backend
+
+5. how get api data react: Inside component or anything app.js use it
+componentDidMount is where the magic happens. 
+This method will be executed when the component mounts (is added to the DOM) for the first time. 
+import React from 'react';
+import ReactDOM from 'react-dom';
+import axios from 'axios';
+
+class FetchDemo extends React.Component {
+  state = {
+    posts: []
+  }
+
+  componentDidMount() {
+    axios.get(`http://www.reddit.com/r/${this.props.subreddit}.json`)
+      .then(res => {
+        const posts = res.data.data.children.map(obj => obj.data);
+        this.setState({ posts });
+      });
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>{`/r/${this.props.subreddit}`}</h1>
+        <ul>
+          {this.state.posts.map(post =>
+            <li key={post.id}>{post.title}</li>
+          )}
+        </ul>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <FetchDemo subreddit="reactjs"/>,
+  document.getElementById('root')
+);
+This method is only executed once during the components life.
+
+Important points:
+1. Loop react: MAP example
+numbers.map((number)=>
+        <li>{number}</li> // could use key={number or id or index} inside <li key= {}>
+       );
+
+2. Check Data as JSON/OBJECT/array in render
+render:
+      {JSON.stringyfy(this.state.data)}
+
+
+
+
+
+
+
+
+

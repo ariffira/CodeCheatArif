@@ -1,0 +1,58 @@
+MongoDB cmd:
+
+start mongoDB:
+sudo service mongod start
+stop:
+sudo service mongod stop
+restart:
+sudo service mongod restart
+
+start mongo shell:
+mongo --host 127.0.0.1:27017
+or
+mongo
+
+when different port:
+mongo --port 28015
+
+display the database:
+db
+test // default
+
+display list of dbs
+show dbs
+
+change to any other db
+use databaseName
+
+insert value:
+db.person.insert({"name":"arif"})
+
+find list of collections:
+db.collectionName.find()
+db.collectionName.find().pretty() //nice look
+
+delete Database:
+>use mydb
+switched to db mydb
+>db.dropDatabase()
+>{ "dropped" : "mydb", "ok" : 1 }
+>
+
+start mongoDB on system start:
+sudo systemctl enable mongod
+
+
+check mongodb status if its running:
+sudo service mongod status
+
+
+
+
+
+
+
+
+
+
+
