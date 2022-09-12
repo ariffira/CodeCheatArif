@@ -1,0 +1,68 @@
+# How to install
+npm i -g typescript
+
+# create typescript config in root
+tsc --init
+
+# variable
+variableType variableName: typeOfData = initial value
+e.g let a: number = 10
+
+let variableName: type;
+let variableName: type = value;
+const constantName: type = value;
+
+let arrayName: type[];
+
+for object:
+varType objectName: {
+   key: string;
+   key: number
+};
+objectName = {
+   key: 'John',
+   value: 25
+};
+
+for functions:
+varType functionName : (key: string) => string;
+
+
+# benefit of typescript
+- you can give type of variable data as static code before runtime
+- can use all js
+- smart js or one level up
+- fix code or less bug or error before runtime
+
+# dynamic types data problem or referencing solution
+interface a object{}
+use object for a function u need like:  function funcName(arg with data type) : interface{}
+
+# data types uses 
+- all js type
+- also new type as: any, unknown, never, tuple, enum
+
+# for long number u can use _ sign. e.g let price: number = 78888_213_2323_122_44
+
+# u dont need to always give type. e.g let price = 78888_213_2323_122_44 is same as above
+
+# array of number: let arry: number[] = [1,4,6,9]
+# array of any: let arry = []
+
+# tuple: let tple:[number, string] = [5, 'arif']
+use of tuple:
+tple[0] //5
+tple[1] // arif
+
+# enum: set of const values
+e.g enum Size {a,b,c} 
+more optimized e.g const enum Size {a,b,c} 
+let mySize: Size = Size.b
+
+
+
+
+
+
+
+
