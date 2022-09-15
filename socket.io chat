@@ -1,0 +1,22 @@
+Backend:
+npm install socket.io
+
+# 'io' from socket.io 
+- socket instance for connection and disconnections
+- io.on('connection', callback(socket)) it can show onnection each time server requested 
+- the socket argument inside above arg can emit or disconnect socket based on event needed
+ e.g. socket.on(eventName, callback)
+ 
+# socket.io(eventName, callback) means receive something as connection, messages, chat messages etc. 
+# socket.emit(eventName, callback) means send somthing as disconnect, messages, chat etc.
+
+see here: https://socket.io/docs/v4/server-socket-instance/
+
+Frontend:
+npm install socket.io-client
+
+import io from 'socket.io-client'
+const socket = io();
+
+
+
